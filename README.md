@@ -36,18 +36,13 @@
 1. 工厂模式：通过封装复杂的算法来产生固定的Java实例一个代码组合（类的组合）。</br>
    代码示例：</br>
    IOC中的BeanFactory(`DefaultListableBeanFactory`) 以及其子类实现的`getBean`的方法就是典型的工厂方法。</br>
-
    ![Image text](src/main/resources/images/Factory.png)
 
 2. 单例模式：在任何情况下这个Java类都只被创建了一次并且提供访问入口。</br>
    代码示例：</br>
-
    IOC中bean的默认初始化的类型是singleton就会进入</br>
-
    ![Image text](src/main/resources/images/Singletion1.png)
-
    方法中代码：</br>
-
    ![Image text](src/main/resources/images/Singletion2.png)
    此处明确表示它是创建并获取一个单例的方法，并且在spring的生命周期以内都需要通过`getBean()`这个访问入口去获取bean的实例。</br>
 
@@ -62,9 +57,7 @@
 4. 代理模式：在代理的方法中调用要代理的方法，并在有代理的方法之前获释之后做一些统一的操作来增强原来方法功能。</br>
    代码示例：</br>
    AOP切面编程的`AbstractAutoProxyCreator`中的</br>
-
    ![Image text](src/main/resources/images/Proxy.png)</br>
-
    这个方法就是创建代理类的方法。通过代理来对类的创建之前和之后做相关的操作。这个方法再调用jdk或是cglib动态代理来生成代理类再将创建的实例放入IOC容器。</br>
 
 5. 委派模式：通过一个逻辑判断来调度和分配要任务实际完成者，这个过程任务发布者不关心谁执行了任务只关心任务是否完成。</br>
